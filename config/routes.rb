@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
+  # sessions: :sessions を追加
   devise_for :users,
-    controllers: { registrations: 'registrations' }
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+    controllers: {
+      registrations: 'registrations',
+      sessions: :sessions
+    }
+
   root 'top#index'
 
   resources :users, only: [:show, :index]
