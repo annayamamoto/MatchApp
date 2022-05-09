@@ -1,6 +1,6 @@
 class ChatRoomChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    # この行を編集する
     stream_from "chat_room_channel"
   end
 
@@ -14,5 +14,6 @@ class ChatRoomChannel < ApplicationCable::Channel
       user_id: current_user.id,
       chat_room_id: data['chat_room_id']
     )
+    # ActionCable.server.broadcast( 'chat_room_channel',{chat_message: data['chat_message']})
   end
 end

@@ -1,6 +1,5 @@
 import consumer from "./consumer";
 
-// この行を編集する
 const appChatRoom = consumer.subscriptions.create("ChatRoomChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
